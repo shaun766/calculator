@@ -25,22 +25,23 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
       
-      {/* Result Display */}
+
       <View style={styles.resultContainer}>
         <Text style={styles.resultText}>{result}</Text>
       </View>
 
-      {/* Input Container */}
+
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.inputText}
           value={input}
           onChangeText={setInput}
-          keyboardType="numeric"
+          selectTextOnFocus={false}
+          editable={false}
         />
       </View>
 
-      {/* Button Grid */}
+
       <View style={styles.buttonContainer}>
         {['7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '0', 'C', '=', '+'].map((item, index) => (
           <TouchableOpacity
@@ -83,8 +84,6 @@ const styles = StyleSheet.create({
   },
   inputText: {
     fontSize: 30,
-    borderWidth: 1,
-    borderColor: '#ccc',
     padding: 10,
     width: '100%',
     color:'white'
@@ -95,13 +94,14 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
+    padding:0,
+    marginBottom:0
   },
   button: {
-    width: 70,
-    height: 70,
+    width: "19%",
+    height: "17%",
     margin: 10,
-    borderRadius: 35,
+    borderRadius: 100,
     backgroundColor: '#f0f0f0',
     justifyContent: 'center',
     alignItems: 'center',
